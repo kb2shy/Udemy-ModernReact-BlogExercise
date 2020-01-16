@@ -6,3 +6,10 @@ export const fetchPosts = () => dispatch => {
         return dispatch({ type: 'FETCH_POSTS', payload: response.data })
     })
 }
+
+export const fetchUser = (id) => dispatch => {
+    jsonPlaceholder.get(`/users/${id}`)
+    .then(response => {
+        return dispatch({ type: 'FETCH_USER', payload: response.data });
+    })
+}
